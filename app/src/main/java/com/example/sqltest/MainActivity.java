@@ -113,46 +113,6 @@ public class MainActivity extends AppCompatActivity {
         return !users.isEmpty() ? users.get(0) : null;
     }
 
-    /*
-    private void removeUser(User user) {
-        String id = user.id;
-        String name = user.name;
-        String age = user.age;
-
-        String condition;
-        String question = "Remove users ";
-
-        if (!id.isEmpty()) {
-            condition = "id=" + id;
-            question += "id" + id;
-        } else if (!name.isEmpty() && !age.isEmpty()) {
-            condition = "name='" + name + "' AND age=" + age;
-            question += name + ", " + age;
-        } else if (!name.isEmpty()) {
-            condition = "name='" + name + "'";
-            question += name;
-        } else if (!age.isEmpty()) {
-            condition = "age='" + age + "'";
-            question += age;
-        } else {
-            return;
-        }
-
-        Debug.log("Condition: " + condition);
-
-        question += "?";
-
-        new AlertDialog.Builder(MainActivity.this)
-                .setTitle("Database")
-                .setMessage(question)
-                .setPositiveButton(R.string.yes, (dialog, which) -> {
-                    execSqlOnce("DELETE FROM users WHERE " + condition + ";");
-
-                    updateInfo();
-                }).setNegativeButton(R.string.no, (dialog, which) -> {}).show();
-    }
-     */
-
     private void execSqlOnce(String command) {
         SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
 
